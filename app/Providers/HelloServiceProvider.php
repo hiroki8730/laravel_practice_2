@@ -4,16 +4,11 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Validators\HelloValidator;
 
 class HelloServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     *
-     * @return void
-     */
     public function boot()
     {
        Validator::extend('hello', function($attribute, $value, $parameters, $validator){
@@ -21,11 +16,6 @@ class HelloServiceProvider extends ServiceProvider
        });
     }
 
-    /**
-     * Register the application services.
-     *
-     * @return void
-     */
     public function register()
     {
         //
