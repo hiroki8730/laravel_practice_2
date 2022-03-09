@@ -1,6 +1,6 @@
 @extends('layouts.helloapp')
 
-@section('title', 'index')
+@section('title', 'Person.index')
 
 @section('menubar')
     @parent
@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <table>
+<table>
         <tr><th>Data</th></tr>
         @foreach($items as $item)
         <tr>
@@ -19,5 +19,5 @@
 @endsection
 
 @section('footer')
-copyright 2017 tuyano
+copyright 2017 tuyano.
 @endsection
