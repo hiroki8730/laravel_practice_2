@@ -17,6 +17,11 @@ class Person extends Model
 
     public function getData ()
     {
-        return $this->id . ' : ' . $this->name . ' [ ' . $this->mail . ' ] ' . ' ( ' . $this->age . ' ) ';
+        return $this->id . ': ' . $this->name . '( ' . $this->mail . ' )';
+    }
+
+    public function board ()
+    {
+        return $this->hasOne('App\Board');
     }
 }
