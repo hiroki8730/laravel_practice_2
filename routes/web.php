@@ -12,6 +12,7 @@
 */
 
 use App\Http\Middleware\HelloMiddleware;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('person/find', 'PersonController@find');
 Route::post('person/find', 'PersonController@search');
@@ -20,8 +21,11 @@ Route::get('person', 'PersonController@index');
 
 Route::get('/hello/show', 'HelloController@show');
 
-Route::get('/hello', 'HelloController@index');
+Route::get('/hello', 'HelloController@index')->middleware('auth');
 Route::post('/hello', 'HelloController@post');
+
+Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth', 'HelloController@postAuth');
 
 Route::get('/hello/add', 'HelloController@add');
 Route::post('/hello/add', 'HelloController@create');
